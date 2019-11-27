@@ -5,27 +5,18 @@ ember-css-transitions-modifiers
 
 This is an Ember.js [element modifiers](https://blog.emberjs.com/2019/03/06/coming-soon-in-ember-octane-part-4.html#:~:targetText=Modifiers%20are%20used%20for%20manipulating,button%20element%20it%20is%20modifying.&targetText=Modifiers%20are%20not%20an%20entirely%20new%20concept%20in%20Ember.) solution for attaching CSS transitions, heavily inspired by the old component-based approach offered by [ember-css-transitions](https://github.com/peec/ember-css-transitions).
 
-
-Compatibility
-------------------------------------------------------------------------------
-
-* Ember.js v3.4 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
-
-
 Installation
 ------------------------------------------------------------------------------
 
-```
+```bash
 ember install ember-css-transitions-modifiers
 ```
-
 
 Usage
 ------------------------------------------------------------------------------
 
 Use the `css-transition` modifier, as shown below:
+
 ```hbs
 <div {{css-transition "example"}}>
   Watch me transition!
@@ -61,11 +52,17 @@ Define as many animation classes as you want using a space delimited string:
 </div>
 ```
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
 Contributing
 ------------------------------------------------------------------------------
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 License
 ------------------------------------------------------------------------------
