@@ -48,7 +48,7 @@ Define as many animation classes as you want using a space delimited string:
 
 ```hbs
 <div {{css-transition "fade move-up"}}>
-  Watch me fade-in and move-up!
+  Watch me fade and move-up!
 </div>
 ```
 
