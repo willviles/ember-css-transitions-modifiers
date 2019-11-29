@@ -47,8 +47,16 @@ Define your transitions in CSS. The modifier will add `-enter`, `-enter-active`,
 Define as many animation classes as you want using a space delimited string:
 
 ```hbs
-<div {{css-transition "fade-in move-up"}}>
+<div {{css-transition "fade move-up"}}>
   Watch me fade-in and move-up!
+</div>
+```
+
+You can attach actions to `onEnter` and `onLeave` events using named arguments:
+
+```hbs
+<div {{css-transition "fade" onEnter=this.onEnter onLeave=this.onLeave}}>
+  Do something when the transition has entered and when it has left!
 </div>
 ```
 
