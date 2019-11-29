@@ -23,7 +23,7 @@ Use the `css-transition` modifier, as shown below:
 </div>
 ```
 
-Define your transitions in CSS. The modifier will add `-enter`, `-enter-active`, `-leave` & `-leave-active` suffixes at the appropriate times on insertion and removal.
+Define transitions in CSS. The modifier will add `-enter`, `-enter-active`, `-leave` & `-leave-active` suffixes at the appropriate times on insertion and removal.
 
 ```css
 .fade-enter {
@@ -44,15 +44,70 @@ Define your transitions in CSS. The modifier will add `-enter`, `-enter-active`,
 }
 ```
 
-Define as many animation classes as you want using a space delimited string:
+Define multiple classes using a space delimited string. Note that CSS transitions set on multiple classes will not work together.
 
 ```hbs
-<div {{css-transition "fade move-up"}}>
-  Watch me fade and move-up!
+<div {{css-transition "foo bar"}}>
+  Setting transition suffixes for both classes
 </div>
 ```
 
-You can attach actions to `onEnter` and `onLeave` events using named arguments:
+### Conditional Transitions
+
+Transitions can be toggled on and off using `enter` and `leave` named args. Truthy values do not need to be specified, but for the sake of this example:
+
+```hbs
+<div {{css-transition "fade" enter=false leave=true}}>
+  Will only transition on leave
+</div>
+```
+
+### Timing Functions
+
+The `transition-delay` CSS property can be defined (in ms) via `delay`, `enterDelay` and `leaveDelay` named args:
+
+```hbs
+<div {{css-transition "fade" delay=1000}}>
+  Sets a custom delay on enter & leave transitions
+</div>
+```
+
+```hbs
+<div {{css-transition "fade" enterDelay=2000 leaveDelay=3000}}>
+  Sets different custom delays for enter & leave transitions
+</div>
+```
+
+The `transition-duration` CSS property can be defined (in ms) via `duration`, `enterDuration` and `leaveDuration` named args:
+
+```hbs
+<div {{css-transition "fade" duration=1000}}>
+  Sets a custom delay on enter & leave transitions
+</div>
+```
+
+```hbs
+<div {{css-transition "fade" enterDuration=2000 leaveDuration=3000}}>
+  Sets different custom durations for enter & leave transitions
+</div>
+```
+
+### Activation
+
+The `active` parameter allows transitions to be fired via a named arg, rather than lifecycle hooks. This allows use cases where:
+
+- Transitions need to be run without the element being added & removed from the DOM (e.g. on-scroll implementations).
+- The element may need to be rendered via Fastboot (e.g. SEO critical content).
+
+```hbs
+<div {{css-transition "fade" active=this.isActive}}>
+  Content is always present in the DOM, with the transition firing via active named arg
+</div>
+```
+
+### Events
+
+Attach actions to `onEnter` and `onLeave` events using named arguments:
 
 ```hbs
 <div {{css-transition "fade" onEnter=this.onEnter onLeave=this.onLeave}}>
