@@ -1,0 +1,107 @@
+<ToggleTransition
+  @title="Basic"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade"}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="No enter"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" enter=false}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="No leave"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" leave=false}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Controlled via active named arg"
+  as | t |
+>
+  <div {{css-transition "fade" active=t.isActive}}>
+    <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+  </div>
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Custom transition-delay"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" delay=1000}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Custom transition-delay (enter only)"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" enterDelay=1000}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Custom transition-delay (leave only)"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" leaveDelay=1000}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Custom transition-duration"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" duration=2500}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Custom transition-duration (enter only)"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" enterDuration=2500}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>
+
+<ToggleTransition
+  @title="Custom transition-duration (leave only)"
+  as | t |
+>
+  {{#if t.isActive}}
+    <div {{css-transition "fade" leaveDuration=2500}}>
+      <img src="https://cdn.freebiesupply.com/logos/large/2x/ember-tomster-logo-png-transparent.png" alt="Tomster" class="tomster">
+    </div>
+  {{/if}}
+</ToggleTransition>

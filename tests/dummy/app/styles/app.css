@@ -1,16 +1,52 @@
-.example-enter {
+section {
+  display: block;
+  width: 100%;
+}
+
+.tomster {
+  display: inline-block;
+  width: 100px;
+}
+
+.fade-enter {
   opacity: 0.01;
 }
 
-.example-enter.example-enter-active {
+.fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition-property: opacity;
+  transition-duration: .5s;
+  transition-timing-function: ease-in;
 }
-.example-leave {
+.fade-leave {
   opacity: 1;
 }
 
-.example-leave.example-leave-active {
+.fade-leave.fade-leave-active {
   opacity: 0.01;
-  transition: opacity .5s ease-in;
+  transition-property: opacity;
+  transition-duration: .5s;
+  transition-timing-function: ease-in;
+}
+
+.move-up-enter {
+  transform: translateY(-10px);
+}
+
+.move-up-enter.move-up-enter-active {
+  transform: translateY(0px);
+  transition-property: transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in;
+}
+
+.move-up-leave {
+  transform: translateY(0px);
+}
+
+.move-up.fade-leave-active {
+  transform: translateY(-10px);
+  transition-property: transform;
+  transition-duration: .2s;
+  transition-timing-function: ease-in;
 }

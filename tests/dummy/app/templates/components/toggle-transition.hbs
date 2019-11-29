@@ -1,0 +1,12 @@
+<section class="toggle-transition" ...attributes>
+  <h2>{{@title}}</h2>
+
+  <button {{on "click" this.toggleActive}}>
+    {{if this.isActive "Leave" "Enter"}}
+  </button>
+
+  {{yield (hash
+    isActive=this.isActive
+    toggleActive=this.toggleActive
+  )}}
+</section>

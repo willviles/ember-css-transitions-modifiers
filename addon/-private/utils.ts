@@ -69,3 +69,7 @@ export function computeTimeout(element: Element) {
 
   return (maxDelay + maxDuration) * 1000;
 }
+
+export function toTimingFunctionString (ms: number) {
+  return `${ms / 1000}s`
+}

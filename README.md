@@ -18,7 +18,7 @@ Usage
 Use the `css-transition` modifier, as shown below:
 
 ```hbs
-<div {{css-transition "example"}}>
+<div {{css-transition "fade"}}>
   Watch me transition!
 </div>
 ```
@@ -26,19 +26,19 @@ Use the `css-transition` modifier, as shown below:
 Define your transitions in CSS. The modifier will add `-enter`, `-enter-active`, `-leave` & `-leave-active` suffixes at the appropriate times on insertion and removal.
 
 ```css
-.example-enter {
+.fade-enter {
   opacity: 0.01;
 }
 
-.example-enter.example-enter-active {
+.fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity .5s ease-in;
 }
-.example-leave {
+.fade-leave {
   opacity: 1;
 }
 
-.example-leave.example-leave-active {
+.fade-leave.fade-leave-active {
   opacity: 0.01;
   transition: opacity .5s ease-in;
 }
